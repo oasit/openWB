@@ -4428,6 +4428,7 @@
 							<option <?php if($speichermodulold == "mpm3pmspeicher\n") echo selected ?> value="mpm3pmspeicher">MPM3PM</option>
 							<option <?php if($speichermodulold == "speicher_bydhv\n") echo selected ?> value="speicher_bydhv">ByD HV</option>
 							<option <?php if($speichermodulold == "speicher_fronius\n") echo selected ?> value="speicher_fronius">Fronius Speicher</option>
+							<option <?php if($speichermodulold == "speicher_fronius_ohmpilot\n") echo selected ?> value="speicher_fronius_ohmpilot">Fronius Ohmpilot</option>
 							<option <?php if($speichermodulold == "speicher_e3dc\n") echo selected ?> value="speicher_e3dc">E3DC Speicher</option>
 							<option <?php if($speichermodulold == "speicher_sbs25\n") echo selected ?> value="speicher_sbs25">SMA SBS2.5 Speicher</option>
 							<option <?php if($speichermodulold == "speicher_solaredge\n") echo selected ?> value="speicher_solaredge">Solaredge Speicher</option>
@@ -4591,6 +4592,11 @@
 							Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.<br>
 						</div>
 					</div>
+					<div id="divspeicherfroniusohmpilot">
+						<div class="row" style="background-color:#fcbe1e">
+							Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.<br>
+						</div>
+					</div>
 					<div id="divspeicherhttp">
 						<div class="row" style="background-color:#fcbe1e">
 							<b><label for="speicherleistung_http">Speicherleistung URL:</label></b>
@@ -4685,6 +4691,7 @@
 							$('#divspeichermpm3pm').hide();
 							$('#divspeicherbydhv').hide();
 							$('#divspeicherfronius').hide();
+							$('#divspeicherfroniusohmpilot').hide();
 							$('#divspeichere3dc').hide();
 							$('#divspeichersbs25').hide();
 							$('#divspeichersolaredge').hide();
@@ -4728,6 +4735,9 @@
 							}
 							if($('#speichermodul').val() == 'speicher_fronius')   {
 								$('#divspeicherfronius').show();
+							}
+							if($('#speichermodul').val() == 'speicher_fronius_ohmpilot')   {
+								$('#divspeicherfroniusohmpilot').show();
 							}
 							if($('#speichermodul').val() == 'speicher_e3dc')   {
 								$('#divspeichere3dc').show();
